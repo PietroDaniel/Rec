@@ -1,0 +1,29 @@
+DROP DATABASE IF EXISTS dbrec;
+CREATE DATABASE dbrec;
+USE dbrec;
+
+CREATE TABLE MONTADORA (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    pais VARCHAR(255) NOT NULL,
+    presidente VARCHAR(255) NOT NULL,
+    data_fundacao DATE NOT NULL
+);
+
+CREATE TABLE CARRO (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    marca VARCHAR(255) NOT NULL,
+    modelo VARCHAR(255) NOT NULL,
+    ano INT NOT NULL,
+    valor DECIMAL(10, 2) NOT NULL,
+    montadora_id INT,
+    FOREIGN KEY (montadora_id) REFERENCES MONTADORA(id)
+);
+
+INSERT INTO MONTADORA (nome, pais, presidente, data_fundacao) VALUES
+('Montadora A', 'Brasil', 'Presidente A', '2000-01-01'),
+('Montadora B', 'EUA', 'Presidente B', '1990-05-15');
+
+INSERT INTO CARRO (marca, modelo, ano, valor, montadora_id) VALUES
+('Marca A', 'Modelo X', 2020, 50000.00, 1),
+('Marca B', 'Modelo Y', 2018, 35000.00, 2);

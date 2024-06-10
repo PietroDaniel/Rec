@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "c8840e10-58e0-4aae-8f85-ca60e5e71bdf",
+		"name": "Rec",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28786422"
+	},
+	"item": [
+		{
+			"name": "[Montadora] Cadastrar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeMarca\": \"Marca A\",\r\n    \"modelo\": \"Modelo X\",\r\n    \"anoInicial\": 2015,\r\n    \"anoFinal\": 2020\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Rec/rest/carro/filtro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Rec",
+						"rest",
+						"carro",
+						"filtro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Carro] Consultar Com Filtros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Lamborghini\",\r\n  \"paisFundacao\": \"Itália\",\r\n  \"presidente\": \"Stephan Winkelmann\",\r\n  \"dataFundacao\": \"1963-05-07\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Rec/rest/montadora/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Rec",
+						"rest",
+						"montadora",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Carro] Consultar Por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Rec/rest/montadora/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Rec",
+						"rest",
+						"montadora",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
